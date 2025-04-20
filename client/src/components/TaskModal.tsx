@@ -157,8 +157,8 @@ const TaskModal = () => {
       !!draftKey && clearTaskDraft(draftKey);
       onClose();
     } catch (e) {
-      console.error('Ошибка сохранения задачи:', e);
-      showSnackbar('Произошла ошибка при сохранении задачи', 'error');
+      console.error(`Ошибка ${isOnBoard ? 'создания' : 'сохранения'} задачи:`, e);
+      showSnackbar(`Произошла ошибка при ${isOnBoard ? 'создании' : 'сохранении'}  задачи`, 'error');
     } finally {
       setLoading(false);
     }
